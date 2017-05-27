@@ -40,6 +40,7 @@ public class home extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         kode = new javax.swing.JComboBox<>();
         harga = new javax.swing.JTextField();
+        refresh = new javax.swing.JButton();
         jumlah = new javax.swing.JTextField();
         kategori = new javax.swing.JTextField();
         tujuan = new javax.swing.JComboBox<>();
@@ -87,6 +88,17 @@ public class home extends javax.swing.JFrame {
         });
         jPanel2.add(harga);
         harga.setBounds(20, 320, 220, 40);
+
+        refresh.setFont(new java.awt.Font("Segoe Marker", 1, 18)); // NOI18N
+        refresh.setForeground(new java.awt.Color(0, 0, 102));
+        refresh.setText("Refresh");
+        refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshActionPerformed(evt);
+            }
+        });
+        jPanel2.add(refresh);
+        refresh.setBounds(260, 410, 100, 40);
 
         jumlah.setText("Jumlah Tiket");
         jumlah.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -286,6 +298,11 @@ public class home extends javax.swing.JFrame {
         
     }//GEN-LAST:event_deleteActionPerformed
 
+    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
+        // TODO add your handling code here:
+        selectData();
+    }//GEN-LAST:event_refreshActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -334,6 +351,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JTextField kategori;
     private javax.swing.JComboBox<String> kode;
     private javax.swing.JTextField nama;
+    private javax.swing.JButton refresh;
     private javax.swing.JButton reset;
     private javax.swing.JButton simpan;
     private javax.swing.JTable tData;
