@@ -270,6 +270,19 @@ public class home extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
+        int baris = tData.getSelectedRow();
+        if(baris != -1){
+            String no = tData.getValueAt(baris, 0).toString();
+            String SQL = "DELETE FROM data_tiket WHERE kode_kereta='"+no+"'";
+            int status = KoneksiDB.execute(SQL);
+            if(status==1){
+                JOptionPane.showMessageDialog(this, "Data berhasil dihapus", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(this, "Data gagal dihapus", "Gagal", JOptionPane.WARNING_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Pilih baris data terlebih dahulu", "Error", JOptionPane.WARNING_MESSAGE);
+        }
         
     }//GEN-LAST:event_deleteActionPerformed
 
